@@ -1,4 +1,4 @@
-<p align="center"><a href="https://note.frankdevs.com" target="_blank"><img src="https://note.frankdevs.com/images/dashboard.PNG" width="400"></a></p>
+<p align="center"><a href="https://note.frankdevs.com" target="_blank"><img src="https://note.frankdevs.com/images/dashboard.PNG"></a></p>
 
 
 
