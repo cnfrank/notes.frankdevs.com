@@ -17,3 +17,5 @@ on:
           server: ${{ secrets.D_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+  
+            
