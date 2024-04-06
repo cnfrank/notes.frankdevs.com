@@ -1,21 +1,28 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy Laravel to Pages
+
 on:
-    push:
-      branches:
-        - main
-  name: Deploy website on push
-  jobs:
-    web-deploy:
-      name: Deploy
-      runs-on: ubuntu-latest
-      steps:
-      - name: Get latest code
-        uses: actions/checkout@v3
-        
-      - name: Push files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.D_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-  
-            
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+
+
+jobs:
+  # Single deploy job since we're just deploying
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v3
+      
+    - name: Push files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.D_HOST }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
